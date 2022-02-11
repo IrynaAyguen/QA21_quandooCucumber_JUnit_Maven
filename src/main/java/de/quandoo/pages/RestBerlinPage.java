@@ -46,11 +46,5 @@ public class RestBerlinPage extends Page {
         pause(3000);
         return $$(merchantCards).size();
     }
-    public void pause(int millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
+
 }

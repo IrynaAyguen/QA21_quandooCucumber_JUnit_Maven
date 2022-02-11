@@ -34,7 +34,7 @@ public class EnquirySteps {
 
     @When("I insert valid PeopleNumber,Date, Time in Enquiry form")
     public void insertValidPeopleDateTime() {
-        enquiryPage.insertValidValidPeopleNumberDateTime("1", "28/02/2022", "10:30 pm", "11:45 pm");
+        enquiryPage.insertValidPeopleNumberAndDateAndTime("10:30 pm", "11:45 pm");
     }
 
     @When("I insert invalid Email or Name or PhoneNumber or Message in Enquiry form")

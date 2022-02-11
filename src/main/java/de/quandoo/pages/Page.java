@@ -13,7 +13,6 @@ public class Page {
         if ($(accCookies).exists()){
             $(accCookies).click();
         }
-//        pause(2000);
     }
 
     public void pause(int millis) {

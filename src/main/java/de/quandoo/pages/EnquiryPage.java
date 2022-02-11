@@ -2,6 +2,7 @@ package de.quandoo.pages;
 
 import com.codeborne.selenide.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -30,7 +31,6 @@ public class EnquiryPage extends Page {
     private static By invalidLastNameMsg = By.xpath("//div[@id='checkoutCustomerForm']/div/div[2]/div[2]/div/div/span[2]");
     private static By invalidPhoneMsg = By.xpath("//div[@id='checkoutCustomerForm']/div/div[3]/div[2]/div/div/span[2]");
     private static By invalidMessageMsg = By.xpath("//div[@class='sc-1atpws7-0 iVrpTU'] //span[2]");
-    //private static By pleaseAgreeMsg = By.xpath("//div[@class='sc-AxjAm t400xa-7 jJhcri'] /label/span");   ///why the locator don't work?
     private static By pleaseAgreeMsg = By.xpath("/html[1]/body[1]/div[1]/section[1]/div[3]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/form[1]/div[2]/div[1]/div[1]/div[1]/label[1]/span[1]");
 
     @FindBy(xpath = "//div[@data-qa='widget-time-picker-start']//select")
@@ -47,17 +47,14 @@ public class EnquiryPage extends Page {
         return $(restaurantName);
     }
 
-    public void insertValidValidPeopleNumberDateTime(String peopleNumber, String date, String timeFrom, String timeTo) {
+    public void insertValidPeopleNumberAndDateAndTime( String timeFrom, String timeTo) {
 
-        $(peopleNumbField).click();
-        $(peopleNumbField).clear();  //// why the command had not cleared?
-        $(peopleNumbField).setValue(peopleNumber);
+       $(peopleNumbField).sendKeys(Keys.UP);//3
 
         $(dateField).click();
         $(nextMonatNavi).doubleClick();
-        $(nextMonatNavi).doubleClick();
         $(day).click();
-//        $(dateField).setValue(date);  ///////
+
 
         Select select1 = new Select(timeFromSelectMenu);
         select1.selectByVisibleText(timeFrom);
