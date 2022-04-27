@@ -11,9 +11,9 @@ import org.junit.runner.RunWith;
         glue = "de.quandoo",
         //tags = "@validDataSignUp"
         //tags = "not @validDataSignUp"
-        tags = "@invalidDataEnquiry"
+        //tags = "@invalidDataEnquiry"
         //tags = "@positiveScenarioFilter"
-        //tags = "@validDataLogin"
+        tags = "@validDataLogin"
         //tags = "@invalidFakerEmailLogin"
         //tags = "@invalidDataLogin"
 )
